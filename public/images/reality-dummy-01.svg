@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="840" viewBox="0 0 800 840" fill="none">
+  <rect width="800" height="840" fill="#000000" />
+  <g stroke="#1f1f1f" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="840" />
+    <line x1="200" y1="0" x2="200" y2="840" />
+    <line x1="300" y1="0" x2="300" y2="840" />
+    <line x1="400" y1="0" x2="400" y2="840" />
+    <line x1="500" y1="0" x2="500" y2="840" />
+    <line x1="600" y1="0" x2="600" y2="840" />
+    <line x1="700" y1="0" x2="700" y2="840" />
+    <line x1="0" y1="120" x2="800" y2="120" />
+    <line x1="0" y1="240" x2="800" y2="240" />
+    <line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="0" y1="480" x2="800" y2="480" />
+    <line x1="0" y1="600" x2="800" y2="600" />
+    <line x1="0" y1="720" x2="800" y2="720" />
+  </g>
+  <rect x="44" y="44" width="712" height="752" stroke="#262626" stroke-width="1.5" />
+  <line x1="84" y1="104" x2="112" y2="104" stroke="#a3a3a3" stroke-width="1.5" />
+  <text x="124" y="108" fill="#a3a3a3" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="2.4">01 / THE GAP</text>
+
+  <text x="84" y="256" fill="#ffffff" font-family="DM Sans, Arial, sans-serif" font-size="52" font-weight="600" letter-spacing="-1.8">Marketing is moving.</text>
+  <text x="84" y="320" fill="#ffffff" font-family="DM Sans, Arial, sans-serif" font-size="52" font-weight="600" letter-spacing="-1.8">The business isn&apos;t.</text>
+
+  <!-- Flat comparison divider bar -->
+  <rect x="84" y="374" width="180" height="4" fill="#525252" />
+  <rect x="280" y="374" width="380" height="4" fill="#ffffff" />
+
+  <!-- Flat monochrome spend vs pipeline diagram -->
+  <text x="84" y="460" fill="#a3a3a3" font-family="Inter, Arial, sans-serif" font-size="12" letter-spacing="1.8">AD SPEND TREND</text>
+  <rect x="84" y="482" width="110" height="14" fill="#525252" />
+  <rect x="210" y="482" width="150" height="14" fill="#a3a3a3" />
+  <rect x="376" y="482" width="316" height="14" fill="#ffffff" />
+
+  <text x="84" y="556" fill="#a3a3a3" font-family="Inter, Arial, sans-serif" font-size="12" letter-spacing="1.8">SALES-READY PIPELINE</text>
+  <rect x="84" y="578" width="176" height="14" fill="#525252" />
+  <rect x="260" y="578" width="432" height="14" fill="#171717" stroke="#262626" stroke-width="1" />
+
+  <!-- Subtle concentric architectural circles (flat strokes, zero gradient) -->
+  <circle cx="640" cy="680" r="140" stroke="#262626" stroke-width="1.5" />
+  <circle cx="640" cy="680" r="88" stroke="#333333" stroke-width="1.5" />
+
+  <line x1="84" y1="712" x2="716" y2="712" stroke="#262626" stroke-width="1" />
+  <text x="84" y="756" fill="#a3a3a3" font-family="Inter, Arial, sans-serif" font-size="13">DUMMY VISUAL 01 — MORE SPEND, SAME PIPELINE</text>
+</svg>

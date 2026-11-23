@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="880" viewBox="0 0 800 880" fill="none">
+  <!-- Solid flat background (no gradients) -->
+  <rect width="800" height="880" fill="#f5f5f5" />
+
+  <!-- Subtle architectural flat grid -->
+  <g stroke="#e5e5e5" stroke-width="1">
+    <line x1="80" y1="0" x2="80" y2="880" />
+    <line x1="160" y1="0" x2="160" y2="880" />
+    <line x1="240" y1="0" x2="240" y2="880" />
+    <line x1="320" y1="0" x2="320" y2="880" />
+    <line x1="400" y1="0" x2="400" y2="880" />
+    <line x1="480" y1="0" x2="480" y2="880" />
+    <line x1="560" y1="0" x2="560" y2="880" />
+    <line x1="640" y1="0" x2="640" y2="880" />
+    <line x1="720" y1="0" x2="720" y2="880" />
+
+    <line x1="0" y1="88" x2="800" y2="88" />
+    <line x1="0" y1="176" x2="800" y2="176" />
+    <line x1="0" y1="264" x2="800" y2="264" />
+    <line x1="0" y1="352" x2="800" y2="352" />
+    <line x1="0" y1="440" x2="800" y2="440" />
+    <line x1="0" y1="528" x2="800" y2="528" />
+    <line x1="0" y1="616" x2="800" y2="616" />
+    <line x1="0" y1="704" x2="800" y2="704" />
+    <line x1="0" y1="792" x2="800" y2="792" />
+  </g>
+
+  <!-- Crisp outer frame & crop marks -->
+  <rect x="40" y="40" width="720" height="800" stroke="#e5e5e5" stroke-width="1.5" fill="none" />
+  <g stroke="#000000" stroke-width="2">
+    <path d="M40 64V40H64" />
+    <path d="M736 40H760V64" />
+    <path d="M40 816V840H64" />
+    <path d="M736 840H760V816" />
+  </g>
+
+  <!-- Top meta line -->
+  <line x1="80" y1="96" x2="108" y2="96" stroke="#525252" stroke-width="1.5" />
+  <text x="120" y="100" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="2.4">DUMMY IMAGE / 800 × 880</text>
+
+  <!-- Minimalist geometric placeholder artwork (pure monochrome) -->
+  <rect x="160" y="210" width="480" height="360" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5" />
+  <line x1="160" y1="210" x2="640" y2="570" stroke="#e5e5e5" stroke-width="1" />
+  <line x1="640" y1="210" x2="160" y2="570" stroke="#e5e5e5" stroke-width="1" />
+
+  <!-- Centered minimal image icon -->
+  <rect x="348" y="338" width="104" height="104" fill="#f5f5f5" stroke="#000000" stroke-width="1.5" />
+  <circle cx="380" cy="370" r="9" fill="#000000" />
+  <path d="M358 428L386 396L406 416L422 400L442 428H358Z" fill="#000000" />
+
+  <!-- Minimal stepped bar accent below placeholder frame -->
+  <rect x="160" y="616" width="120" height="8" fill="#000000" />
+  <rect x="160" y="638" width="220" height="6" fill="#e5e5e5" />
+  <rect x="160" y="656" width="160" height="6" fill="#e5e5e5" />
+
+  <!-- Bottom footer strip -->
+  <line x1="80" y1="744" x2="720" y2="744" stroke="#e5e5e5" stroke-width="1" />
+  <text x="80" y="784" fill="#000000" font-family="DM Sans, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="-0.3">Hero Visual Placeholder</text>
+  <text x="80" y="808" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="13">Replace public/images/hero-dummy.svg with your final hero visual.</text>
+</svg>

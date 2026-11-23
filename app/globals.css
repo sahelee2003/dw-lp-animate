@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --surface: #f5f5f5;
+  --foreground: #000000;
+  --muted: #525252;
+  --border: #e5e5e5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: var(--font-inter), "Inter", sans-serif;
+  --font-heading: var(--font-dm-sans), "DM Sans", sans-serif;
+}
+
+html {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: var(--font-inter), "Inter", sans-serif;
+  overflow-x: clip;
+}
+
+h1,
+h2 {
+  font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+}
+
+p {
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+@keyframes dw-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-dw-marquee {
+  animation: dw-marquee 32s linear infinite;
+}
+
+.animate-dw-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-dw-marquee {
+    animation: none;
+  }
+}
+
+@keyframes concentricRipple {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+}
+
+@keyframes clickRipple {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.75;
+  }
+  100% {
+    width: 220px;
+    height: 220px;
+    opacity: 0;
+  }
+}
+
