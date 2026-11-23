@@ -37,7 +37,7 @@ const POV_CARDS = [
 
 function CompassMark() {
   return (
-    <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[#000000] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-45">
+    <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[#000000]">
       <svg
         width="20"
         height="20"
@@ -73,7 +73,7 @@ function CardArrow() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className="shrink-0 text-[#525252] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1.5 group-hover:text-[#000000]"
+      className="shrink-0 text-[#525252]"
     >
       <path
         d="M3 8H13M13 8L8.75 3.75M13 8L8.75 12.25"
@@ -544,13 +544,7 @@ export default function PointOfViewSection() {
                   }}
                   className="w-full shrink-0 md:w-[380px] lg:w-[420px] xl:w-[450px] will-change-transform"
                 >
-                  <article className="group relative flex h-full min-h-[380px] md:h-[460px] lg:h-[490px] xl:h-[510px] flex-col justify-between overflow-hidden rounded-md border border-[#e5e5e5] bg-[#ffffff] p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:border-[#000000] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] lg:p-9 xl:p-10">
-                    {/* Subtle top hairline accent expanding on hover */}
-                    <span
-                      aria-hidden="true"
-                      className="absolute top-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-[#000000] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100"
-                    />
-
+                  <article className="relative flex h-full min-h-[380px] md:h-[460px] lg:h-[490px] xl:h-[510px] flex-col justify-between overflow-hidden rounded-md border border-[#e5e5e5] bg-[#ffffff] p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] lg:p-9 xl:p-10">
                     <div className="flex items-center justify-between border-b border-[#e5e5e5] pb-5">
                       <div className="flex items-center gap-3">
                         <span className="font-sans text-xs font-medium tabular-nums tracking-[0.14em] text-[#000000]">
@@ -572,7 +566,7 @@ export default function PointOfViewSection() {
                       </p>
                     </div>
 
-                    <div className="flex items-center justify-between border-t border-[#e5e5e5] pt-4 font-sans text-[11px] uppercase tracking-[0.12em] text-[#525252] transition-colors duration-300 group-hover:text-[#000000]">
+                    <div className="flex items-center justify-between border-t border-[#e5e5e5] pt-4 font-sans text-[11px] uppercase tracking-[0.12em] text-[#525252]">
                       <span>Digital Wolf Standard</span>
                       <CardArrow />
                     </div>
