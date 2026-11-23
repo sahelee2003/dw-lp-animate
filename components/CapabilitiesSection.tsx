@@ -168,17 +168,15 @@ export default function CapabilitiesSection() {
       mm.add(
         "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
         () => {
-          // For each card, as the next card scrolls up and overlaps it,
-          // smoothly scale down, tilt slightly in 3D perspective, and dim.
+          // Cards scale down smoothly and stack as new cards overlap,
+          // keeping the card 100% solid white (no darkening, no black transformation).
           cards.forEach((card, i) => {
             if (i < cards.length - 1) {
               const nextCard = cards[i + 1];
 
               gsap.to(card, {
-                scale: 0.94,
+                scale: 0.96,
                 y: -14,
-                rotateX: 4,
-                filter: "brightness(0.72)",
                 ease: "none",
                 force3D: true,
                 scrollTrigger: {
@@ -194,10 +192,8 @@ export default function CapabilitiesSection() {
               if (i < cards.length - 2) {
                 const thirdCard = cards[i + 2];
                 gsap.to(card, {
-                  scale: 0.88,
+                  scale: 0.92,
                   y: -28,
-                  rotateX: 8,
-                  filter: "brightness(0.5)",
                   ease: "none",
                   force3D: true,
                   scrollTrigger: {
@@ -214,10 +210,8 @@ export default function CapabilitiesSection() {
               if (i === 0 && cards.length >= 4) {
                 const fourthCard = cards[3];
                 gsap.to(card, {
-                  scale: 0.82,
-                  y: -40,
-                  rotateX: 12,
-                  filter: "brightness(0.35)",
+                  scale: 0.88,
+                  y: -42,
                   ease: "none",
                   force3D: true,
                   scrollTrigger: {
@@ -340,64 +334,63 @@ export default function CapabilitiesSection() {
                   transformOrigin: "center top",
                 }}
               >
-                <article className="group relative flex min-h-[500px] w-full flex-col justify-between overflow-hidden rounded-[28px] border border-[#262626] bg-[#000000] p-7 text-[#ffffff] shadow-[0_24px_50px_rgba(0,0,0,0.22),0_1px_3px_rgba(255,255,255,0.06)] transition-shadow duration-300 sm:p-9 md:flex-row md:items-stretch md:gap-8 lg:min-h-[540px] lg:gap-12 lg:p-11">
-                  {/* Subtle top hairline accent */}
-                  <span
-                    aria-hidden="true"
-                    className="absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r from-white/40 via-white/80 to-white/40"
-                  />
-
+                <article className="group relative flex min-h-[500px] w-full flex-col justify-between overflow-hidden rounded-[28px] border border-[#e5e5e5] bg-[#ffffff] p-7 text-[#000000] shadow-[0_20px_50px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.03)] transition-shadow duration-300 sm:p-9 md:flex-row md:items-stretch md:gap-8 lg:min-h-[540px] lg:gap-12 lg:p-11">
                   {/* Left Column: Details & Actions */}
                   <div className="flex flex-1 flex-col justify-between">
                     <div>
                       {/* Step ID & Category */}
-                      <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                        <span className="font-heading text-3xl font-medium tracking-tight text-[#ffffff] sm:text-4xl">
+                      <div className="flex items-center justify-between border-b border-[#e5e5e5] pb-4">
+                        <span className="font-heading text-3xl font-medium tracking-tight text-[#000000] sm:text-4xl">
                           {card.id}
                         </span>
-                        <span className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#a3a3a3]">
+                        <span className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#525252]">
                           {card.category}
                         </span>
                       </div>
 
                       {/* Title & Description */}
-                      <h3 className="mt-6 font-heading text-2xl font-medium leading-tight text-[#ffffff] sm:text-3xl lg:text-4xl">
+                      <h3 className="mt-6 font-heading text-2xl font-medium leading-tight text-[#000000] sm:text-3xl lg:text-4xl">
                         {card.title}
                       </h3>
-                      <p className="mt-4 max-w-[44ch] font-sans text-sm leading-relaxed text-[#a3a3a3] sm:text-[15px]">
+                      <p className="mt-4 max-w-[44ch] font-sans text-sm leading-relaxed text-[#525252] sm:text-[15px]">
                         {card.description}
                       </p>
 
-                      {/* Pill Tags */}
-                      <div className="mt-7 flex flex-wrap gap-2">
-                        {card.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-sans text-[11px] font-medium text-white/80 transition-colors duration-200 hover:border-white/40 hover:text-white"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                      {/* Capability Points List (One by One) */}
+                      <div className="mt-6">
+                        <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-3">
+                          {card.tags.map((tag) => (
+                            <li
+                              key={tag}
+                              className="flex items-center gap-2.5 font-sans text-xs sm:text-[13px] font-medium text-[#000000]"
+                            >
+                              <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#000000]"
+                              />
+                              <span>{tag}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
 
                     {/* Bottom Row: CTA Button & Metric */}
-                    <div className="mt-8 flex flex-col gap-5 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="mt-8 flex flex-col gap-5 border-t border-[#e5e5e5] pt-6 sm:flex-row sm:items-center sm:justify-between">
                       <MagneticButton
                         href="#contact"
                         variant="primary"
                         size="sm"
                         arrow="right"
-                        className="!bg-[#ffffff] !text-[#000000] hover:!bg-neutral-200"
                       >
                         Contact with us
                       </MagneticButton>
 
                       <div className="flex items-baseline gap-2">
-                        <span className="font-heading text-2xl font-bold tracking-tight text-[#ffffff]">
+                        <span className="font-heading text-2xl font-bold tracking-tight text-[#000000]">
                           {card.metric}
                         </span>
-                        <span className="font-sans text-xs text-[#a3a3a3]">
+                        <span className="font-sans text-xs text-[#525252]">
                           {card.metricLabel}
                         </span>
                       </div>
@@ -406,32 +399,32 @@ export default function CapabilitiesSection() {
 
                   {/* Right Column: Visual Showcase Card */}
                   <div className="mt-8 flex-1 md:mt-0">
-                    <div className="relative flex h-full min-h-[300px] w-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#121215] p-6 sm:min-h-[360px] sm:p-7">
-                      {/* Architectural Photo Background with Dark Vignette */}
+                    <div className="relative flex h-full min-h-[300px] w-full flex-col justify-between overflow-hidden rounded-2xl border border-[#e5e5e5] bg-[#f5f5f5] p-6 sm:min-h-[360px] sm:p-7">
+                      {/* Architectural Photo Background with Subtle Light Vignette */}
                       <Image
                         src={card.image}
                         alt={`${card.title} capability preview`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className={`object-cover ${card.objectPosition} opacity-40 transition-transform duration-700 ease-out group-hover:scale-105`}
+                        className={`object-cover ${card.objectPosition} opacity-75 transition-transform duration-700 ease-out group-hover:scale-105`}
                         priority={idx === 0}
                       />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-transparent" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/95 via-white/40 to-transparent" />
 
                       {/* Top Header Badge */}
                       <div className="relative z-10 flex items-center justify-between">
-                        <span className="rounded-full border border-white/20 bg-black/60 px-3.5 py-1 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-white/90 backdrop-blur-md">
+                        <span className="rounded-full border border-black/10 bg-white/85 px-3.5 py-1 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-[#000000] shadow-sm backdrop-blur-md">
                           {card.visualBadge}
                         </span>
-                        <span className="flex h-2 w-2 rounded-full bg-white opacity-80" />
+                        <span className="flex h-2 w-2 rounded-full bg-[#000000] opacity-80" />
                       </div>
 
-                      {/* Bottom Frosted Information Card */}
-                      <div className="relative z-10 rounded-xl border border-white/15 bg-black/70 p-4.5 backdrop-blur-md">
-                        <h4 className="font-heading text-base font-semibold text-[#ffffff] sm:text-lg">
+                      {/* Bottom Information Card */}
+                      <div className="relative z-10 rounded-xl border border-[#e5e5e5] bg-[#ffffff]/90 p-4.5 shadow-sm backdrop-blur-md">
+                        <h4 className="font-heading text-base font-semibold text-[#000000] sm:text-lg">
                           {card.visualTitle}
                         </h4>
-                        <p className="mt-1 font-sans text-xs leading-relaxed text-[#a3a3a3]">
+                        <p className="mt-1 font-sans text-xs leading-relaxed text-[#525252]">
                           {card.visualNote}
                         </p>
                       </div>
